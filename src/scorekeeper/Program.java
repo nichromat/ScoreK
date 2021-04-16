@@ -21,29 +21,25 @@ public class Program {
 		while(!gameEnded){
 			Prompt.mainMenu();
 			
-			if(Prompt.text.equals("1")){
-				Prompt.addPlayer();
+			switch (Prompt.text) {
+			case "1": 
+				Prompt.addPlayer(); 
 				g.addPlayer(Prompt.text, Prompt.num);
-				
-			}
-			
-			if (Prompt.text.equals("2")) {
+				break;
+			case "2": 
 				Prompt.printPlayerScore();
 				g.printPlayerScore(Prompt.text);
-			}
-			
-			if (Prompt.text.equals("3")) {
+				break;
+			case "3": 
 				g.printAllScores();
-			}
-			
-			
-			if (Prompt.text.equals("4")) {
+				break;
+			case "4": 
 				gameEnded = true;
+				break;
+			default:
+				System.out.println("Option not valid: Option available from 1 to 4");
 			}
 		}
-		
-		
-
 	}
 
 }
