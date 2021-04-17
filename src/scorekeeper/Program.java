@@ -15,6 +15,9 @@ public class Program {
 	static boolean gameEnded = false;
 	// Defines whether the game is ended or not
 	
+	final static String programVersion = "1.0"; 
+	// Program version
+	
 	public static void main(String[] args) {
 		Game g = new Game();
 		
@@ -40,6 +43,8 @@ public class Program {
 				System.out.println("Option not valid: Option available from 1 to 4");
 			}
 		}
+		System.out.println("\nScoreK " + programVersion);
+		System.out.println("Thanks for using ScoreK.");
 	}
 
 }
