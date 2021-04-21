@@ -8,4 +8,4 @@ A program that save player's score written in Java
 4. Quit the program
 
 ## Function added
-Automatic terminal cleaning
+* Automatic terminal cleaning
