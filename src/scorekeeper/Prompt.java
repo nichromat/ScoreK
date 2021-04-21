@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  */
 public class Prompt {
-	static final String PROGRAM_VERSION = "1.0";
+	static boolean errorFound = false;
 	static String text;
 	static int num;
 	static Scanner sc = new Scanner(System.in);
@@ -28,21 +28,26 @@ public class Prompt {
 	}
 	
 	public static void askForOption() {
+		// Ask for a numerical option at the main menu
 		System.out.print("Enter an option: ");
 		text = sc.next();
 	}
 	
 	public static void askForName()	{
+		// Ask for a name
 		System.out.print("Insert a name: ");
 		text = sc.next();
 	}
 	
 	public static void askForNum() {
+		// ask for a number
 		try {
 		System.out.print("Insert score: ");
-		num = sc.nextInt();
+		text = sc.next();
+		num = Integer.parseInt(text);
 		}
 		catch (Exception InputMismatchException) {
+			errorFound = true;
 			
 		}
 
@@ -55,4 +60,9 @@ public class Prompt {
 	public static void printPlayerScore() {
 		askForName();
 	}
+	
+	public static void restoreError() {
+		errorFound = false;
+	}
+
 }

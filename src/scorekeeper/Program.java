@@ -28,7 +28,15 @@ public class Program {
 			switch (Prompt.text) {
 			case "1": 
 				Prompt.addPlayer(); 
-				g.addPlayer(Prompt.text, Prompt.num);
+				
+				if (Prompt.errorFound = true) {
+					System.out.println("Score not valid");
+				}
+				else {
+					g.addPlayer(Prompt.text, Prompt.num);
+					Prompt.restoreError();
+				}
+				
 				break;
 			case "2": 
 				Prompt.printPlayerScore();
