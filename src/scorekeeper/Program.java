@@ -15,7 +15,7 @@ public class Program {
 	static boolean gameEnded = false;
 	// Defines whether the game is ended or not
 	
-	final static String programVersion = "1.0"; 
+	final static String PROGRAM_VERSION= "1.0"; 
 	// Program version
 	
 	public static void main(String[] args) {
@@ -23,6 +23,7 @@ public class Program {
 		
 		while(!gameEnded){
 			Prompt.mainMenu();
+			Prompt.askForOption();
 			
 			switch (Prompt.text) {
 			case "1": 
@@ -43,7 +44,7 @@ public class Program {
 				System.out.println("Option not valid: Option available from 1 to 4");
 			}
 		}
-		System.out.println("\nScoreK " + programVersion);
+		System.out.println("\nScoreK " + PROGRAM_VERSION);
 		System.out.println("Thanks for using ScoreK.");
 	}
 
