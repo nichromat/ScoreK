@@ -41,28 +41,44 @@ public class Prompt {
 	
 	public static void askForNum() {
 		// ask for a number
+		System.out.print("Enter a number: ");
+		num = sc.nextInt();
+	}
+	
+	public static void secureAskForNum() {
 		try {
-		System.out.print("Insert score: ");
-		text = sc.next();
-		num = Integer.parseInt(text);
+			askForNum();
+		} 
+		catch (Exception InputMismatch) {
+			System.out.println("Number not valid");
 		}
-		catch (Exception InputMismatchException) {
-			errorFound = true;
-			
-		}
-
+		
 	}
 	public static void addPlayer(){
 		askForName();
-		askForNum();
+		secureAskForNum();
 	}
 
 	public static void printPlayerScore() {
 		askForName();
 	}
-	
+
 	public static void restoreError() {
 		errorFound = false;
 	}
-
+	
+	public static void cleanTerminal() {
+		System.out.print("\033[H\033[2J");  
+		System.out.flush();
+	}
+	
+	public static void waitInput() {
+		System.out.println("Press enter to continue...");
+		try{
+			System.in.read();
+			}
+		catch(Exception e){	
+			e.printStackTrace();
+			}
+	}
 }

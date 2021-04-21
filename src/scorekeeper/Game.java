@@ -21,11 +21,13 @@ public class Game {
 	public void addPlayer(String name, int score){
 		// Create new player from the given name and score
 		players.put(name, score);
+
 	}
 	
 	public void printPlayerScore(String name){
 		// Print the score from the given player name
-		System.out.println("Name " + name + " | " + "Score: " + players.get(name));	
+		System.out.println("Name: " + name + " | " + "Score: " + players.get(name));	
+
 	}
 	
 	public void printAllScores() {

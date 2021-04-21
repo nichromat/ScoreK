@@ -22,30 +22,32 @@ public class Program {
 		Game g = new Game();
 		
 		while(!gameEnded){
+			Prompt.cleanTerminal();
 			Prompt.mainMenu();
 			Prompt.askForOption();
 			
 			switch (Prompt.text) {
-			case "1": 
+			
+			case "1":
+				Prompt.cleanTerminal();
 				Prompt.addPlayer(); 
-				
-				if (Prompt.errorFound = true) {
-					System.out.println("Score not valid");
-				}
-				else {
-					g.addPlayer(Prompt.text, Prompt.num);
-					Prompt.restoreError();
-				}
-				
+				g.addPlayer(Prompt.text, Prompt.num);
+				Prompt.waitInput();
 				break;
-			case "2": 
+			case "2":
+				Prompt.cleanTerminal();
 				Prompt.printPlayerScore();
 				g.printPlayerScore(Prompt.text);
+				Prompt.waitInput();
 				break;
-			case "3": 
+			case "3":
+				Prompt.cleanTerminal();
 				g.printAllScores();
+				Prompt.waitInput();
 				break;
-			case "4": 
+			case "4":
+				
+				Prompt.cleanTerminal();
 				gameEnded = true;
 				break;
 			default:
