@@ -1,5 +1,6 @@
 /**
- * 
+ * This code will be used for managing the prompt, inputs and outputs during 
+ * the execution of the program. 
  */
 package scorekeeper;
 
@@ -11,10 +12,11 @@ import java.util.Scanner;
  */
 public class Prompt {
 	static boolean errorFound = false;
-	static String text;
-	static int num;
+	static String text1; 
+	static String text2;
 	static Scanner sc = new Scanner(System.in);
 	
+	/* Prompt message */
 	public static void mainMenu() {
 		// Print the main menu of the game
 		System.out.println("------------------------");
@@ -23,56 +25,37 @@ public class Prompt {
 		System.out.println("2. Print a player's score");
 		System.out.println("3. Print all players scores");
 		System.out.println("4. Exit");
-		
-		// Used to choose an option from the menu
 	}
+	
+	/*Basic function that's ask for user input*/
 	
 	public static void askForOption() {
 		// Ask for a numerical option at the main menu
 		System.out.print("Enter an option: ");
-		text = sc.next();
+		text1 = sc.next();
 	}
 	
 	public static void askForName()	{
 		// Ask for a name
 		System.out.print("Insert a name: ");
-		text = sc.next();
+		text1 = sc.next();
 	}
 	
 	public static void askForNum() {
 		// ask for a number
 		System.out.print("Enter a number: ");
-		num = sc.nextInt();
+		text2 = sc.next();
 	}
 	
-	public static void secureAskForNum() {
-		try {
-			askForNum();
-		} 
-		catch (Exception InputMismatch) {
-			System.out.println("Number not valid");
-		}
-		
-	}
-	public static void addPlayer(){
-		askForName();
-		secureAskForNum();
-	}
-
-	public static void printPlayerScore() {
-		askForName();
-	}
-
-	public static void restoreError() {
-		errorFound = false;
-	}
+	
+	/* Useful functionalities */
 	
 	public static void cleanTerminal() {
 		System.out.print("\033[H\033[2J");  
 		System.out.flush();
 	}
 	
-	public static void waitInput() {
+	public static void waitForEnter() {
 		System.out.println("Press enter to continue...");
 		try{
 			System.in.read();

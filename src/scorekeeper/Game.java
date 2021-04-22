@@ -13,12 +13,16 @@ import java.util.HashMap;
 public class Game {
 	private HashMap<String, Integer> players; 
 	
+	/* Constructors */
+	
 	Game(){
 		// Each new game creates a new HashMap of players
 		players = new HashMap<String, Integer>();
 	}
 	
-	public void addPlayer(String name, int score){
+	
+	/* Basic functions */
+	private void addPlayer(String name, int score){
 		// Create new player from the given name and score
 		players.put(name, score);
 
@@ -36,6 +40,18 @@ public class Game {
 		    printPlayerScore(name);
 		  } 
 	}
+	
+	/* Exception handling functions */
+	
+	public void secureAddPlayer(String name, String score){
+		try {
+			addPlayer(name, Integer.parseInt(score));
+		}
+		catch (NumberFormatException e) {
+			System.out.println("Warning: the score you entered is invalid");
+		}
+	}
+	
 	
 	
 }
