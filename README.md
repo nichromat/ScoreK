@@ -9,7 +9,7 @@ A program that save player's score written in Java
 
 ## Function added
 * Automatic terminal cleaning
-=======
+
 ## Functions available
 1. Options available
 2. Add a player
