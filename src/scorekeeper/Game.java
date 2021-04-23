@@ -1,5 +1,5 @@
 /**
- * 
+ * This is a model class: It represent the games object structures and behaviours
  */
 package scorekeeper;
 
@@ -22,6 +22,7 @@ public class Game {
 	
 	
 	/* Basic functions */
+	
 	private void addPlayer(String name, int score){
 		// Create new player from the given name and score
 		players.put(name, score);
@@ -34,14 +35,14 @@ public class Game {
 
 	}
 	
+	/* Advanced functions */
+	
 	public void printAllScores() {
 		// Print all the scores available
 		  for(String name: players.keySet()){
 		    printPlayerScore(name);
 		  } 
 	}
-	
-	/* Exception handling functions */
 	
 	public void secureAddPlayer(String name, String score){
 		try {

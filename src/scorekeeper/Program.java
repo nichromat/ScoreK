@@ -1,5 +1,5 @@
 /**
- * 
+ * This is the main class: The program starts here
  */
 package scorekeeper;
 
